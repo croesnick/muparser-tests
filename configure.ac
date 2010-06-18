@@ -62,10 +62,18 @@ AC_ARG_ENABLE([coverage],
       [enable_coverage=no])
 
 if test "x$enable_coverage" = "xyes"; then
-  CFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"
-  CXXFLAGS="$CXXFLAGS -fprofile-arcs -ftest-coverage"
-  LDFLAGS="$LDFLAGS -fprofile-arcs"
+  AC_PATH_PROG(LCOV, lcov, no)
+  AC_PATH_PROG(GENHTML, genhtml, no)
+
+  if test "x$LCOV" != "xno" -a "x$GENHTML" != "xno"; then
+    CFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"
+    CXXFLAGS="$CXXFLAGS -fprofile-arcs -ftest-coverage"
+    LDFLAGS="$LDFLAGS -fprofile-arcs"
+  else
+    AC_MSG_ERROR([lcov is required to build coverage information])
+  fi
 fi
+AM_CONDITIONAL(ENABLE_COVERAGE, test "x$enable_coverage" != "xno")
 
 AC_CONFIG_FILES([
   Makefile
@@ -73,6 +81,7 @@ AC_CONFIG_FILES([
   testsuite-1/Makefile
   testsuite-2/Makefile
   testsuite-3/Makefile
+  coverage/Makefile
 ])
 
 AC_OUTPUT
