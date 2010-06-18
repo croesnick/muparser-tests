@@ -3,7 +3,8 @@ TESTS = \
 	test-builtin-constants \
 	test-builtin-operators \
 	test-builtin-functions \
-	test-custom-constants
+	test-custom-constants \
+	test-custom-variables
 
 noinst_PROGRAMS = $(TESTS)
 
@@ -33,6 +34,10 @@ test_builtin_functions_LDADD = $(TESTS_LDADD)
 test_custom_constants_SOURCES = custom-constants.cxx
 test_custom_constants_CXXFLAGS = $(TESTS_CXXFLAGS)
 test_custom_constants_LDADD = $(TESTS_LDADD)
+
+test_custom_variables_SOURCES = custom-variables.cxx
+test_custom_variables_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_custom_variables_LDADD = $(TESTS_LDADD)
 
 include $(top_srcdir)/tests.mak
 
