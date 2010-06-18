@@ -13,7 +13,12 @@ check-valgrind: all
 	$(MAKE) -C testsuite-3 check-valgrind
 
 if ENABLE_COVERAGE
-coverage: check
+%.coverage: all
+	-find $(top_builddir) -name *.gcda | xargs rm
+	$(MAKE) -C $* check
 	$(MAKE) -C coverage coverage
 endif
+
+clean-local:
+	-find $(top_builddir) -name *.gcda -or -name *.gcno | xargs rm
 
