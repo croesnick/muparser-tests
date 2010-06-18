@@ -3,15 +3,12 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 #include <muParser/muParser.h>
-#include <muParser/muParserInt.h>
 
 class AllocateTest : public CppUnit::TestFixture {
 public:
     CPPUNIT_TEST_SUITE (AllocateTest);
     CPPUNIT_TEST (testAllocateStack);
     CPPUNIT_TEST (testAllocateDynamic);
-    CPPUNIT_TEST (testAllocateStackInt);
-    CPPUNIT_TEST (testAllocateDynamicInt);
     CPPUNIT_TEST_SUITE_END ();
 
     void testAllocateStack () {
@@ -20,16 +17,6 @@ public:
 
     void testAllocateDynamic () {
         mu::Parser *parser = new mu::Parser ();
-        CPPUNIT_ASSERT (parser != NULL);
-        delete parser;
-    }
-
-    void testAllocateStackInt () {
-        mu::ParserInt parser;
-    }
-
-    void testAllocateDynamicInt () {
-        mu::ParserInt *parser = new mu::ParserInt ();
         CPPUNIT_ASSERT (parser != NULL);
         delete parser;
     }
