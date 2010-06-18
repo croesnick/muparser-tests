@@ -15,6 +15,8 @@ public:
     CPPUNIT_TEST (testMultiply);
     CPPUNIT_TEST (testDivide);
     CPPUNIT_TEST (testPower);
+    CPPUNIT_TEST (testComparison);
+    CPPUNIT_TEST (testLogic);
     CPPUNIT_TEST_SUITE_END ();
 
     void testUnaryMinus () {
@@ -189,6 +191,112 @@ public:
         parser.SetExpr ("27^(1/3)");
         res = parser.Eval ();
         CPPUNIT_ASSERT_DOUBLES_EQUAL (3, res, 0.0);
+    }
+
+    void testComparison () {
+        mu::Parser parser;
+        double res;
+
+        parser.SetExpr ("2 < 3");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 > 3");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("3 < 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("3 > 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 <= 3");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 >= 3");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("3 <= 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("3 >= 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 <= 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 >= 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 == 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 != 3");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("2 == 3");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("2 != 2");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+    }
+
+    void testLogic () {
+        mu::Parser parser;
+        double res;
+
+        parser.SetExpr ("1 and 1");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("1 and 0");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("0 and 0");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("1 or 1");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("1 or 0");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("0 or 0");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("1 xor 1");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
+
+        parser.SetExpr ("1 xor 0");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("0 xor 1");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, res, 0.0);
+
+        parser.SetExpr ("0 xor 0");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, res, 0.0);
     }
 };
 
