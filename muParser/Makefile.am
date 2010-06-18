@@ -7,7 +7,6 @@ libmuparser_la_SOURCES = \
 	muParserComplex.cpp \
 	muParser.cpp \
 	muParserError.cpp \
-	muParserInt.cpp \
 	muParserTokenReader.cpp
 
 noinst_HEADERS = \
@@ -19,7 +18,6 @@ noinst_HEADERS = \
 	muParserError.h \
 	muParserFixes.h \
 	muParser.h \
-	muParserInt.h \
 	muParserStack.h \
 	muParserToken.h \
 	muParserTokenReader.h
