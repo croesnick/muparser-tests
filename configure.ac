@@ -55,6 +55,18 @@ AM_CONDITIONAL(HAVE_GDB, test ! "x$GDB" = "xno")
 CFLAGS="$CFLAGS -g -O0 -Wall"
 CXXFLAGS="$CXXFLAGS -g -O0 -Wall"
 
+AC_ARG_ENABLE([coverage],
+    AS_HELP_STRING([--enable-coverage],
+      [enable code coverage output (default=no)])],
+      [],
+      [enable_coverage=no])
+
+if test "x$enable_coverage" = "xyes"; then
+  CFLAGS="$CFLAGS -fprofile-arcs -ftest-coverage"
+  CXXFLAGS="$CXXFLAGS -fprofile-arcs -ftest-coverage"
+  LDFLAGS="$LDFLAGS -fprofile-arcs"
+fi
+
 AC_CONFIG_FILES([
   Makefile
   muParser/Makefile
