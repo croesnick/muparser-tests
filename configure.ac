@@ -6,6 +6,9 @@ AC_LANG(C++)
 AM_INIT_AUTOMAKE([dist-bzip2 -Wno-portability])
 AM_MAINTAINER_MODE
 
+LT_INIT([disable-shared static pic-only])
+LT_LANG([C++])
+
 m4_ifdef([AM_SILENT_RULES],
   [AM_SILENT_RULES([yes])],
   [
@@ -24,10 +27,6 @@ AX_CXX_HAVE_STD
 AX_CXX_NAMESPACE_STD
 AX_CXX_HAVE_STL
 AX_CXX_TEMPLATES
-
-PKG_CHECK_MODULES(MUPARSER, muparser)
-AC_SUBST(MUPARSER_CFLAGS)
-AC_SUBST(MUPARSER_LIBS)
 
 PKG_CHECK_MODULES(CPPUNIT, cppunit)
 AC_SUBST(CPPUNIT_CFLAGS)
@@ -58,6 +57,7 @@ CXXFLAGS="$CXXFLAGS -g -O0 -Wall"
 
 AC_CONFIG_FILES([
   Makefile
+  muParser/Makefile
   testsuite-1/Makefile
   testsuite-2/Makefile
   testsuite-3/Makefile
