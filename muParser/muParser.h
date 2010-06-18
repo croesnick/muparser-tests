@@ -103,9 +103,9 @@ namespace mu
 
     private:
 
-      int m_nGroup;
       char_type m_cDecPoint;  
       char_type m_cThousandsSep;
+      int m_nGroup;
     };
      
     // Trigonometric functions
