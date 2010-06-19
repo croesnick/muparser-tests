@@ -13,6 +13,7 @@ public:
     CPPUNIT_TEST (testDefine);
     CPPUNIT_TEST (testAssign);
     CPPUNIT_TEST (testQueryRemove);
+    CPPUNIT_TEST (testImplicit);
     CPPUNIT_TEST_SUITE_END ();
 
     void testDefine () {
@@ -59,6 +60,32 @@ public:
 
         parser.RemoveVar("x");
         CPPUNIT_ASSERT (parser.GetVar ().size () == 0);
+    }
+
+    static double * variable_x (const char *name, void *data) {
+      static double val = M_PI;
+
+      CPPUNIT_ASSERT (data != NULL);
+      if (strcmp (name, "x") == 0) {
+        int *variable_x_called = (int *) data;
+        *variable_x_called = *variable_x_called + 1;
+        return &val;
+      }
+
+      return NULL;
+    }
+
+    void testImplicit () {
+        mu::Parser parser;
+        double res;
+        int variable_x_called = 0;
+
+        parser.SetVarFactory(&variable_x, &variable_x_called);
+
+        parser.SetExpr ("x");
+        res = parser.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (M_PI, res, 0.000001);
+        CPPUNIT_ASSERT_EQUAL (1, variable_x_called);
     }
 };
 
