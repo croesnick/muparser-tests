@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <limits>
-#include "/home/carsten/Documents/study/reliable-programming-ss10/muparser/include/muParser.h"
+#include <muParser/muParser.h>
 
 class FunctionTest : public CppUnit::TestFixture {
 public:

@@ -5,10 +5,10 @@ noinst_PROGRAMS = $(TESTS)
 
 TESTS_CXXFLAGS = \
 	$(CPPUNIT_CFLAGS) \
-	$(MUPARSER_CFLAGS)
+	-I$(top_srcdir)
 TESTS_LDADD = \
 	$(CPPUNIT_LIBS) \
-	$(MUPARSER_LIBS)
+	$(top_builddir)/muParser/libmuparser.la
 
 test_functions_SOURCES = functions.cxx
 test_functions_CXXFLAGS = $(TESTS_CXXFLAGS)
