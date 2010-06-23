@@ -6,6 +6,7 @@
 #include <limits>
 #include <math.h>
 #include <muParser/muParser.h>
+//#include "/home/carsten/Documents/study/reliable-programming-ss10/muparser/include/muParser.h"
 
 class DifferentiateTest : public CppUnit::TestFixture {
 public:
@@ -18,7 +19,7 @@ public:
 		mu::Parser parser;
 		double x;
 		double rval;
-		double eps = (double) 0.00074; /* std::numerical_limits<double>::epsilon( ) */
+		double eps = (double) 0.00074;
 		double inter;
 
 		parser.DefineVar ("x", &x);
@@ -41,7 +42,7 @@ public:
 		mu::Parser parser;
 		double x;
 		double rval;
-		double eps = (double) 0.00074; /* std::numerical_limits<double>::epsilon( ) */
+		double eps = (double) 0.00074;
 		double inter = 2 * eps * cos (1.0/eps) + sin (1.0/eps);
 
 		parser.DefineVar ("x", &x);
