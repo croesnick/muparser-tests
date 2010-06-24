@@ -9,7 +9,6 @@
 #include <limits>
 
 #include <muParser/muParser.h>
-//#include "/home/carsten/Documents/study/reliable-programming-ss10/muparser/include/muParser.h"
 
 class FunctionTest : public CppUnit::TestFixture {
 public:
@@ -17,6 +16,8 @@ public:
     CPPUNIT_TEST (testFunctionSign);
 	CPPUNIT_TEST (testFunctionRoundInt);
 	CPPUNIT_TEST (testFunctionAreaHyperbolicusSinCosTan);
+	CPPUNIT_TEST (testFunctionIf);
+	CPPUNIT_TEST (testFunctionAverage);
     CPPUNIT_TEST_SUITE_END ();
 
 	void testFunctionSign () {
@@ -45,7 +46,7 @@ public:
 
 		int base = (rand () % 1023);
 		double rval = 0;		
-		double epsilon = std::numeric_limits<double>::epsilon();
+		double epsilon = 2.0 * std::numeric_limits<double>::epsilon();
 
 		parser.DefineConst ("base", (double) base);
 		parser.DefineConst ("eps", (double) epsilon);
@@ -114,6 +115,45 @@ public:
 		parser.SetExpr ("atanh(artanhMax)");
         rval = parser.Eval ();
         CPPUNIT_ASSERT_DOUBLES_EQUAL (0.5 * log((1 + artanhMax) / (1 - artanhMax)), rval, 1e-07);
+	}
+
+	void testFunctionIf () {
+		mu::Parser parser;
+		double dvar, rval;
+
+		parser.DefineConst( "pi", (double) M_PI);
+
+		parser.DefineVar ("x", &dvar);
+		// Important: Leave no space between 'if' and the leading parenthesis
+		parser.SetExpr ("if((x == pi), 2.0, if((x < pi), 1.0, 3.0))");
+
+		dvar = M_PI;
+		rval = parser.Eval ();
+		CPPUNIT_ASSERT_DOUBLES_EQUAL (2.0, rval, 0.0);
+
+		dvar = M_PI - 2.0 * std::numeric_limits<double>::epsilon ();
+		rval = parser.Eval ();
+		CPPUNIT_ASSERT_DOUBLES_EQUAL (1.0, rval, 0.0);
+
+		dvar = M_PI + 2.0 * std::numeric_limits<double>::epsilon ();
+		rval = parser.Eval ();
+		CPPUNIT_ASSERT_DOUBLES_EQUAL (3.0, rval, 0.0);
+	}
+
+	void testFunctionAverage () {
+		mu::Parser parser;
+		double dvar, rval;
+
+		dvar = std::numeric_limits<double>::epsilon ();
+		parser.DefineVar ("x", &dvar);
+
+		parser.SetExpr ("avg(x)");
+		rval = parser.Eval ();
+		CPPUNIT_ASSERT_DOUBLES_EQUAL (dvar, rval, 0.0);
+
+		parser.SetExpr ("avg(x,2*x)");
+		rval = parser.Eval ();
+		CPPUNIT_ASSERT_DOUBLES_EQUAL (1.5*dvar, rval, 0.5*std::numeric_limits<double>::epsilon());
 	}
 };
 

@@ -6,7 +6,6 @@
 #include <limits>
 #include <math.h>
 #include <muParser/muParser.h>
-//#include "/home/carsten/Documents/study/reliable-programming-ss10/muparser/include/muParser.h"
 
 class DifferentiateTest : public CppUnit::TestFixture {
 public:
