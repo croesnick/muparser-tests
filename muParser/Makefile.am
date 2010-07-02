@@ -4,7 +4,6 @@ libmuparser_la_SOURCES = \
 	muParserBase.cpp \
 	muParserBytecode.cpp \
 	muParserCallback.cpp \
-	muParserComplex.cpp \
 	muParser.cpp \
 	muParserError.cpp \
 	muParserTokenReader.cpp
@@ -13,7 +12,6 @@ noinst_HEADERS = \
 	muParserBase.h \
 	muParserBytecode.h \
 	muParserCallback.h \
-	muParserComplex.h \
 	muParserDef.h \
 	muParserError.h \
 	muParserFixes.h \
