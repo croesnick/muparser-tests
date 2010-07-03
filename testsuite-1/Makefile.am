@@ -5,6 +5,7 @@ TESTS = \
 	test-builtin-functions \
 	test-custom-constants \
 	test-custom-variables \
+	test-custom-functions \
 	test-differentiate
 
 noinst_PROGRAMS = $(TESTS)
@@ -39,6 +40,10 @@ test_custom_constants_LDADD = $(TESTS_LDADD)
 test_custom_variables_SOURCES = custom-variables.cxx
 test_custom_variables_CXXFLAGS = $(TESTS_CXXFLAGS)
 test_custom_variables_LDADD = $(TESTS_LDADD)
+
+test_custom_functions_SOURCES = custom-functions.cxx
+test_custom_functions_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_custom_functions_LDADD = $(TESTS_LDADD)
 
 test_differentiate_SOURCES = differentiate.cxx
 test_differentiate_CXXFLAGS = $(TESTS_CXXFLAGS)
