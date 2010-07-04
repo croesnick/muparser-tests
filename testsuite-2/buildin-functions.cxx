@@ -38,6 +38,7 @@ public:
 		catch (mu::Parser::exception_type &e)
 		{
 			std::cout << e.GetMsg() << std::endl;
+			CPPUNIT_ASSERT (false);
 		}
 	}
 
@@ -51,11 +52,11 @@ public:
 		parser.DefineConst ("base", (double) base);
 		parser.DefineConst ("eps", (double) epsilon);
 
-		parser.SetExpr ("rint(base+(0.5-eps)) - base+rint(0.5-eps)");
+		parser.SetExpr ("rint(base+(0.5-(1e-10))) - base+rint(0.5-(1e-10))");
 		rval = parser.Eval ();
 		CPPUNIT_ASSERT_DOUBLES_EQUAL (0.0, rval, 0.0);
 
-		parser.SetExpr ("rint(base+0.5-eps)+2*rint(base+0.5)+4*rint(base+0.5+eps)");
+		parser.SetExpr ("rint(base+0.5-(1e-10))+2*rint(base+0.5)+4*rint(base+0.5+(1e-10))");
 		rval = parser.Eval ();
 		CPPUNIT_ASSERT_DOUBLES_EQUAL ((base + (2+4)*(base+1)), rval, 0.0);
 	}

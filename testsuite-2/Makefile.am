@@ -1,6 +1,8 @@
 TESTS = \
-	test-functions \
-	test-differentiate
+	test-buildin-functions \
+	test-differentiate \
+	test-custom-constants \
+	test-custom-variables
 
 noinst_PROGRAMS = $(TESTS)
 
@@ -11,13 +13,21 @@ TESTS_LDADD = \
 	$(CPPUNIT_LIBS) \
 	$(MUPARSER_LIBS)
 
-test_functions_SOURCES = functions.cxx
-test_functions_CXXFLAGS = $(TESTS_CXXFLAGS)
-test_functions_LDADD = $(TESTS_LDADD)
+test_buildin_functions_SOURCES = buildin-functions.cxx
+test_buildin_functions_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_buildin_functions_LDADD = $(TESTS_LDADD)
 
 test_differentiate_SOURCES = differentiate.cxx
 test_differentiate_CXXFLAGS = $(TESTS_CXXFLAGS)
 test_differentiate_LDADD = $(TESTS_LDADD)
+
+test_custom_constants_SOURCES = custom-constants.cxx
+test_custom_constants_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_custom_constants_LDADD = $(TESTS_LDADD)
+
+test_custom_variables_SOURCES = custom-variables.cxx
+test_custom_variables_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_custom_variables_LDADD = $(TESTS_LDADD)
 
 include $(top_srcdir)/tests.mak
 

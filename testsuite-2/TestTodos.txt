@@ -1,0 +1,20 @@
+OK	Parser (de)initialization
+OK	Evaluating an expression
+OK	Setting the expression
+OK	Defining identifier charsets
+OK	Defining parser variables
+OK	Explicit variable definition
+OK	Implicit variable definition
+OK	Defining constants
+	Defining functions
+	Defining operators
+	Unary operators
+	Binary operators
+OK	Querying variables
+OK	Querying constants
+	Value recognition callbacks
+OK	Removing variables
+OK	Removing constants
+	Localization
+	Error handling
+	Example code
