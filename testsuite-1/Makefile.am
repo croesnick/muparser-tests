@@ -7,6 +7,7 @@ TESTS = \
 	test-custom-variables \
 	test-custom-operators \
 	test-custom-functions \
+	test-parser \
 	test-differentiate
 
 noinst_PROGRAMS = $(TESTS)
@@ -49,6 +50,10 @@ test_custom_operators_LDADD = $(TESTS_LDADD)
 test_custom_functions_SOURCES = custom-functions.cxx
 test_custom_functions_CXXFLAGS = $(TESTS_CXXFLAGS)
 test_custom_functions_LDADD = $(TESTS_LDADD)
+
+test_parser_SOURCES = parser.cxx
+test_parser_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_parser_LDADD = $(TESTS_LDADD)
 
 test_differentiate_SOURCES = differentiate.cxx
 test_differentiate_CXXFLAGS = $(TESTS_CXXFLAGS)
