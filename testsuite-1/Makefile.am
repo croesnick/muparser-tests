@@ -1,5 +1,4 @@
 TESTS = \
-	test-allocate \
 	test-builtin-constants \
 	test-builtin-operators \
 	test-builtin-functions \
@@ -18,10 +17,6 @@ TESTS_CXXFLAGS = \
 TESTS_LDADD = \
 	$(CPPUNIT_LIBS) \
 	$(top_builddir)/muParser/libmuparser.la
-
-test_allocate_SOURCES = allocate.cxx
-test_allocate_CXXFLAGS = $(TESTS_CXXFLAGS)
-test_allocate_LDADD = $(TESTS_LDADD)
 
 test_builtin_constants_SOURCES = builtin-constants.cxx
 test_builtin_constants_CXXFLAGS = $(TESTS_CXXFLAGS)

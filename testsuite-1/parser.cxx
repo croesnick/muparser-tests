@@ -10,10 +10,34 @@
 class ParserTest : public CppUnit::TestFixture {
 public:
     CPPUNIT_TEST_SUITE (ParserTest);
+    CPPUNIT_TEST (testAllocateStack);
+    CPPUNIT_TEST (testAllocateDynamic);
+    CPPUNIT_TEST (testCopy);
     CPPUNIT_TEST (testCustomValueRecognition);
     CPPUNIT_TEST (testPrecedence);
     CPPUNIT_TEST (testParenthesis);
     CPPUNIT_TEST_SUITE_END ();
+
+    void testAllocateStack () {
+        mu::Parser parser;
+    }
+
+    void testAllocateDynamic () {
+        mu::Parser *parser = new mu::Parser ();
+        CPPUNIT_ASSERT (parser != NULL);
+        delete parser;
+    }
+
+    void testCopy () {
+        mu::Parser parser;
+        double res;
+
+        parser.SetExpr ("2 + 2");
+
+        mu::Parser parser2 = parser;
+        res = parser2.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (4, res, 0.000001);
+    }
 
     static int _hexValRecognition(const char *expr, int *pos, double *val) {
       if (expr[0]!='#') 
