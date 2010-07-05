@@ -6,7 +6,7 @@ OK	Defining parser variables
 OK	Explicit variable definition
 OK	Implicit variable definition
 OK	Defining constants
-	Defining functions
+1/2	Defining functions
 	Defining operators
 	Unary operators
 	Binary operators
