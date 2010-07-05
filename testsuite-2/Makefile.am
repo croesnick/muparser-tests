@@ -3,6 +3,7 @@ TESTS = \
 	test-differentiate \
 	test-custom-constants \
 	test-custom-functions \
+	test-custom-operators \
 	test-custom-variables
 
 noinst_PROGRAMS = $(TESTS)
@@ -29,6 +30,10 @@ test_custom_constants_LDADD = $(TESTS_LDADD)
 test_custom_functions_SOURCES = custom-functions.cxx
 test_custom_functions_CXXFLAGS = $(TESTS_CXXFLAGS)
 test_custom_functions_LDADD = $(TESTS_LDADD)
+
+test_custom_operators_SOURCES = custom-operators.cxx
+test_custom_operators_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_custom_operators_LDADD = $(TESTS_LDADD)
 
 test_custom_variables_SOURCES = custom-variables.cxx
 test_custom_variables_CXXFLAGS = $(TESTS_CXXFLAGS)

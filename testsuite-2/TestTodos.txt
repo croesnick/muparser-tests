@@ -7,8 +7,8 @@ OK	Explicit variable definition
 OK	Implicit variable definition
 OK	Defining constants
 1/2	Defining functions
-	Defining operators
-	Unary operators
+OK	Defining operators
+OK	Unary operators
 	Binary operators
 OK	Querying variables
 OK	Querying constants
