@@ -13,6 +13,7 @@ public:
     CPPUNIT_TEST (testAllocateStack);
     CPPUNIT_TEST (testAllocateDynamic);
     CPPUNIT_TEST (testCopy);
+    CPPUNIT_TEST (testAssign);
     CPPUNIT_TEST (testCustomValueRecognition);
     CPPUNIT_TEST (testPrecedence);
     CPPUNIT_TEST (testParenthesis);
@@ -36,6 +37,21 @@ public:
         parser.DefineVar("x", &x);
 
         mu::Parser parser2 = parser;
+        res = parser2.Eval ();
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (4, res, 0.000001);
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (4, x, 0.000001);
+    }
+
+    void testAssign () {
+        mu::Parser parser;
+        double res, x;
+
+        parser.SetExpr ("x = 2 + 2");
+        parser.DefineVar("x", &x);
+
+        mu::Parser parser2;
+        
+        parser2 = parser;
         res = parser2.Eval ();
         CPPUNIT_ASSERT_DOUBLES_EQUAL (4, res, 0.000001);
         CPPUNIT_ASSERT_DOUBLES_EQUAL (4, x, 0.000001);
