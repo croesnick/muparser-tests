@@ -30,13 +30,15 @@ public:
 
     void testCopy () {
         mu::Parser parser;
-        double res;
+        double res, x;
 
-        parser.SetExpr ("2 + 2");
+        parser.SetExpr ("x = 2 + 2");
+        parser.DefineVar("x", &x);
 
         mu::Parser parser2 = parser;
         res = parser2.Eval ();
         CPPUNIT_ASSERT_DOUBLES_EQUAL (4, res, 0.000001);
+        CPPUNIT_ASSERT_DOUBLES_EQUAL (4, x, 0.000001);
     }
 
     static int _hexValRecognition(const char *expr, int *pos, double *val) {
