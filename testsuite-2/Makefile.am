@@ -4,7 +4,8 @@ TESTS = \
 	test-custom-constants \
 	test-custom-functions \
 	test-custom-operators \
-	test-custom-variables
+	test-custom-variables \
+	test-custom-value-recognition
 
 noinst_PROGRAMS = $(TESTS)
 
@@ -38,6 +39,10 @@ test_custom_operators_LDADD = $(TESTS_LDADD)
 test_custom_variables_SOURCES = custom-variables.cxx
 test_custom_variables_CXXFLAGS = $(TESTS_CXXFLAGS)
 test_custom_variables_LDADD = $(TESTS_LDADD)
+
+test_custom_value_recognition_SOURCES = custom-value-recognition.cxx
+test_custom_value_recognition_CXXFLAGS = $(TESTS_CXXFLAGS)
+test_custom_value_recognition_LDADD = $(TESTS_LDADD)
 
 include $(top_srcdir)/tests.mak
 

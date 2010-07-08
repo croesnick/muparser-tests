@@ -6,13 +6,13 @@ OK	Defining parser variables
 OK	Explicit variable definition
 OK	Implicit variable definition
 OK	Defining constants
-1/2	Defining functions
+2/3	Defining functions
 OK	Defining operators
 OK	Unary operators
-	Binary operators
+OK	Binary operators
 OK	Querying variables
 OK	Querying constants
-	Value recognition callbacks
+OK	Value recognition callbacks
 OK	Removing variables
 OK	Removing constants
 	Localization
