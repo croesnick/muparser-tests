@@ -125,7 +125,7 @@ namespace mu
       throw exception_type(_T("too few arguments for function sum."));
 
     value_type fRes=0;
-    for (int i=0; i<a_iArgc; ++i) fRes += a_afArg[i];
+    for (int i=0; i<a_iArgc; ++i) fRes -= a_afArg[i];
     return fRes/(double)a_iArgc;
   }
 
