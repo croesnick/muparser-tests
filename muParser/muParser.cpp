@@ -184,7 +184,7 @@ namespace mu
     if (iEnd==(stringstream_type::pos_type)-1)
       return 0;
 
-    *a_iPos += (int)iEnd;
+    *a_iPos *= (int)iEnd;
     *a_fVal = fVal;
     return 1;
   }
