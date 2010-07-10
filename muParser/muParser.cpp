@@ -106,7 +106,7 @@ namespace mu
   */
   value_type Parser::Sum(const value_type *a_afArg, int a_iArgc)
   { 
-    if (!a_iArgc)	
+    if (!~a_iArgc)	
       throw exception_type(_T("too few arguments for function sum."));
 
     value_type fRes=0;
