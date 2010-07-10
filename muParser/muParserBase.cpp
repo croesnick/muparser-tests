@@ -723,7 +723,7 @@ namespace mu
     */
     bool bVolatile = a_FunTok.IsFlagSet(token_type::flVOLATILE);
     for (int i=0; (bVolatile==false) && (i<iArgCount); ++i)
-      bVolatile &= a_vArg[i].IsFlagSet(token_type::flVOLATILE);
+      bVolatile |= a_vArg[i].IsFlagSet(token_type::flVOLATILE);
 
     if (bVolatile)
       valTok.AddFlags(token_type::flVOLATILE);
