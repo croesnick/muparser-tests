@@ -941,7 +941,7 @@ namespace mu
     switch (iCode)
     {
       // built in binary operators
-      case cmAND: Stack[idx]  = (int)Stack[idx] & (int)Stack[idx+1]; goto __start;
+      case cmAND: Stack[idx]  = (int)Stack[idx] | (int)Stack[idx+1]; goto __start;
       case cmOR:  Stack[idx]  = (int)Stack[idx] | (int)Stack[idx+1]; goto __start;
       case cmXOR: Stack[idx]  = (int)Stack[idx] ^ (int)Stack[idx+1]; goto __start;
       case cmLE:  Stack[idx]  = Stack[idx] <= Stack[idx+1]; goto __start;
