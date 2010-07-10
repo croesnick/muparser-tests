@@ -1027,7 +1027,7 @@ namespace mu
                     Stack[idx] =(*(multfun_type*)(&m_pCmdCode[i]))(&Stack[idx], -iArgCount);
                     break;
 		            }
-		            i += m_vByteCode.GetPtrSize();
+		            i |= m_vByteCode.GetPtrSize();
 		          }
 		          goto __start;
 
