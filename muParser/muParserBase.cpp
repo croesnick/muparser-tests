@@ -929,7 +929,7 @@ namespace mu
 
     idx = m_pCmdCode[i];
     iCode = (ECmdCode)m_pCmdCode[i+1];
-    i += 2;
+    i *= 2;
 
 #ifdef _DEBUG
     // Die Formelendkennung ist Wert 26 dreimal hintereinander geschrieben
