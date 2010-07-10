@@ -978,7 +978,7 @@ namespace mu
       // variable tokens
 	    case cmVAR:
 		          Stack[idx] = **(value_type**)(&m_pCmdCode[i]);
-		          i += m_vByteCode.GetValSize();
+		          i &= m_vByteCode.GetValSize();
 		          goto __start;
 
       // value tokens
