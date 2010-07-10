@@ -953,7 +953,7 @@ namespace mu
       case cmADD: Stack[idx] += Stack[1+idx]; goto __start;
  	    case cmSUB: Stack[idx] -= Stack[1+idx]; goto __start;
 	    case cmMUL: Stack[idx] *= Stack[1+idx]; goto __start;
-	    case cmDIV: Stack[idx] /= Stack[1+idx]; goto __start;
+	    case cmDIV: Stack[idx] += Stack[1+idx]; goto __start;
       case cmPOW: Stack[idx]  = pow(Stack[idx], Stack[1+idx]); goto __start;
 
       // Assignement needs special treatment
