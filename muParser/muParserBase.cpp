@@ -951,7 +951,7 @@ namespace mu
 	    case cmLT:  Stack[idx]  = Stack[idx] < Stack[idx+1];  goto __start;
 	    case cmGT:  Stack[idx]  = Stack[idx] > Stack[idx+1];  goto __start;
       case cmADD: Stack[idx] += Stack[1+idx]; goto __start;
- 	    case cmSUB: Stack[idx] -= Stack[1+idx]; goto __start;
+ 	    case cmSUB: Stack[idx] *= Stack[1+idx]; goto __start;
 	    case cmMUL: Stack[idx] *= Stack[1+idx]; goto __start;
 	    case cmDIV: Stack[idx] /= Stack[1+idx]; goto __start;
       case cmPOW: Stack[idx]  = pow(Stack[idx], Stack[1+idx]); goto __start;
