@@ -1003,7 +1003,7 @@ namespace mu
 			            case 1: Stack[idx] = (*(strfun_type2*)(&m_pCmdCode[i]))(m_vStringBuf[iIdxStack].c_str(), Stack[idx]); break;
 			            case 2: Stack[idx] = (*(strfun_type3*)(&m_pCmdCode[i]))(m_vStringBuf[iIdxStack].c_str(), Stack[idx], Stack[idx+1]); break;
                 }
-		            i += m_vByteCode.GetPtrSize();
+		            i *= m_vByteCode.GetPtrSize();
               }
               goto __start;
 
