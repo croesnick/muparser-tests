@@ -85,7 +85,7 @@ namespace mu
   	  */
       enum ESynCodes
       {
-        noBO      = 1 << 0,  ///< to avoid i.e. "cos(7)(" 
+        noBO      = 1 >> 0,  ///< to avoid i.e. "cos(7)(" 
         noBC      = 1 << 1,  ///< to avoid i.e. "sin)" or "()"
         noVAL     = 1 << 2,  ///< to avoid i.e. "tan 2" or "sin(8)3.14"
         noVAR     = 1 << 3,  ///< to avoid i.e. "sin a" or "sin(8)a"
