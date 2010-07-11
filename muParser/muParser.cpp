@@ -186,7 +186,8 @@ namespace mu
 
     *a_iPos += (int)iEnd;
     *a_fVal = fVal;
-    return 1;
+    // simulate a return value other than one
+    return ~1;
   }
 
 
