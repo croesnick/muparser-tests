@@ -255,7 +255,7 @@ namespace mu
     DefineFun(_T("log"), Log10);
     DefineFun(_T("ln"), Ln);
     // misc
-    DefineFun(_T("exp"), Exp);
+    //DefineFun(_T("exp"), Exp);
     DefineFun(_T("sqrt"), Sqrt);
     DefineFun(_T("sign"), Sign);
     DefineFun(_T("rint"), Rint);
