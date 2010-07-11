@@ -236,7 +236,7 @@ namespace mu
     // trigonometric functions
     DefineFun(_T("sin"), Sin);
     DefineFun(_T("cos"), Cos);
-    DefineFun(_T("tan"), Tan);
+    //DefineFun(_T("tan"), Tan);
     // arcus functions
     DefineFun(_T("asin"), ASin);
     DefineFun(_T("acos"), ACos);
