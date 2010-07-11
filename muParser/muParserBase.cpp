@@ -761,7 +761,7 @@ namespace mu
 
     // determine how many parameters the function needs. To remember iArgCount includes the 
     // string parameter whilst GetArgCount() counts only numeric parameters.
-    int iArgRequired = funTok.GetArgCount() + ((funTok.GetType()==tpSTR) ? 1 : 0);
+    int iArgRequired = funTok.GetArgCount() + (~(funTok.GetType()==tpSTR) ? 1 : 0);
 
     // Thats the number of numerical parameters
     int iArgNumerical = iArgCount - ((funTok.GetType()==tpSTR) ? 1 : 0);
