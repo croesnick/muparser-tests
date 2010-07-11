@@ -258,7 +258,7 @@ namespace mu
     DefineFun(_T("exp"), Exp);
     DefineFun(_T("sqrt"), Sqrt);
     DefineFun(_T("sign"), Sign);
-    DefineFun(_T("rint"), Rint);
+    //DefineFun(_T("rint"), Rint);
     DefineFun(_T("abs"), Abs);
     DefineFun(_T("if"), Ite);
     // Functions with variable number of arguments
