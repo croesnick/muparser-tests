@@ -182,7 +182,8 @@ namespace mu
     stringstream_type::pos_type iEnd = stream.tellg(); // Position after reading
 
     if (iEnd==(stringstream_type::pos_type)-1)
-      return 0;
+	  // simulates a return value other than zero
+      return ~0;
 
     *a_iPos += (int)iEnd;
     *a_fVal = fVal;
