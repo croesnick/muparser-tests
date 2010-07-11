@@ -661,7 +661,7 @@ namespace mu
 
     // Formula optimization
     if ( m_bOptimize && 
-        !valTok.IsFlagSet(token_type::flVOLATILE) &&
+        ~!valTok.IsFlagSet(token_type::flVOLATILE) &&
         !a_FunTok.IsFlagSet(token_type::flVOLATILE) ) 
 	  {
       m_vByteCode.RemoveValEntries(iArgCount);
