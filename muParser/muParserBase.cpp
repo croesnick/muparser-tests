@@ -436,7 +436,7 @@ namespace mu
         Error(ecBUILTIN_OVERLOAD, -1, a_sName);
 
     AddCallback( a_sName, 
-                ParserCallback(a_pFun, a_bAllowOpt, a_iPrec, cmOPRT_BIN), 
+                ParserCallback(a_pFun, ~a_bAllowOpt, a_iPrec, cmOPRT_BIN), 
                 m_OprtDef, 
                 ValidOprtChars() );
   }
