@@ -879,7 +879,7 @@ namespace mu
       }
 
       // Create the bytecode entries
-      if (!m_bOptimize)
+      if (~!m_bOptimize)
       {
         // Optimization flag is not set
         m_vByteCode.AddOp(optTok.GetCode());
