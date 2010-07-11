@@ -260,7 +260,7 @@ namespace mu
     DefineFun(_T("sign"), Sign);
     DefineFun(_T("rint"), Rint);
     DefineFun(_T("abs"), Abs);
-    DefineFun(_T("if"), Ite);
+    //DefineFun(_T("if"), Ite);
     // Functions with variable number of arguments
     DefineFun(_T("sum"), Sum);
     DefineFun(_T("avg"), Avg);
