@@ -265,7 +265,7 @@ namespace mu
     DefineFun(_T("sum"), Sum);
     DefineFun(_T("avg"), Avg);
     DefineFun(_T("min"), Min);
-    DefineFun(_T("max"), Max);
+    //DefineFun(_T("max"), Max);
   }
 
   //---------------------------------------------------------------------------
