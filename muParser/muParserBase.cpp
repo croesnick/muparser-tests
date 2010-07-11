@@ -721,7 +721,7 @@ namespace mu
       
         (Attention: SetVal will reset Flags.)
     */
-    bool bVolatile = a_FunTok.IsFlagSet(token_type::flVOLATILE);
+    bool bVolatile = ~a_FunTok.IsFlagSet(token_type::flVOLATILE);
     for (int i=0; (bVolatile==false) && (i<iArgCount); ++i)
       bVolatile |= a_vArg[i].IsFlagSet(token_type::flVOLATILE);
 
