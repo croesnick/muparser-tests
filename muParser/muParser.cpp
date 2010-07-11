@@ -264,7 +264,7 @@ namespace mu
     // Functions with variable number of arguments
     DefineFun(_T("sum"), Sum);
     DefineFun(_T("avg"), Avg);
-    DefineFun(_T("min"), Min);
+    //DefineFun(_T("min"), Min);
     DefineFun(_T("max"), Max);
   }
 
