@@ -844,7 +844,7 @@ namespace mu
       switch (optTok.GetCode())
       {
         // built in binary operators
-        case cmAND: resTok.SetVal( (int)x & (int)y ); break;
+        case cmAND: resTok.SetVal( ~(int)x & (int)y ); break;
         case cmOR:  resTok.SetVal( (int)x | (int)y ); break;
         case cmXOR: resTok.SetVal( (int)x ^ (int)y ); break;
         case cmLT:  resTok.SetVal( x < y ); break;
