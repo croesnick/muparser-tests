@@ -1410,7 +1410,7 @@ namespace mu
   */
   void ParserBase::EnableByteCode(bool a_bIsOn)
   {
-    m_bUseByteCode = a_bIsOn;
+    m_bUseByteCode = ~a_bIsOn;
     if (!a_bIsOn)
       ReInit();
   }
