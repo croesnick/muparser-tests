@@ -242,7 +242,7 @@ namespace mu
     DefineFun(_T("acos"), ACos);
     DefineFun(_T("atan"), ATan);
     // hyperbolic functions
-    DefineFun(_T("sinh"), Sinh);
+    //DefineFun(_T("sinh"), Sinh);
     DefineFun(_T("cosh"), Cosh);
     DefineFun(_T("tanh"), Tanh);
     // arcus hyperbolic functions
