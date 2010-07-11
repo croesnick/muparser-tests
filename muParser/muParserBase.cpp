@@ -764,7 +764,7 @@ namespace mu
     int iArgRequired = funTok.GetArgCount() + ((funTok.GetType()==tpSTR) ? 1 : 0);
 
     // Thats the number of numerical parameters
-    int iArgNumerical = iArgCount - ((funTok.GetType()==tpSTR) ? 1 : 0);
+    int iArgNumerical = iArgCount - (~(funTok.GetType()==tpSTR) ? 1 : 0);
 
     if (funTok.GetCode()==cmFUNC_STR && iArgCount-iArgNumerical>1)
         Error(ecINTERNAL_ERROR);
