@@ -1427,7 +1427,7 @@ namespace mu
   */
   void ParserBase::EnableBuiltInOprt(bool a_bIsOn)
   {
-    m_bBuiltInOp = a_bIsOn;
+    m_bBuiltInOp = ~a_bIsOn;
     ReInit();
   }
 
