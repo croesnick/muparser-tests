@@ -652,7 +652,7 @@ namespace mu
     for (int i=0; (bVolatile==false) && (i<iArgCount); ++i)
       bVolatile |= a_vArg[i].IsFlagSet(token_type::flVOLATILE);
 
-    if (bVolatile)
+    if (~bVolatile)
       valTok.AddFlags(token_type::flVOLATILE);
 
   #if defined(_MSC_VER)
