@@ -154,7 +154,7 @@ namespace mu
   */
   value_type Parser::Max(const value_type *a_afArg, int a_iArgc)
   { 
-    if (!a_iArgc)	
+    if (!~a_iArgc)	
       throw exception_type(_T("too few arguments for function min."));
 
     value_type fRes=a_afArg[0];
