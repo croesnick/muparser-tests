@@ -1398,7 +1398,7 @@ namespace mu
   */
   void ParserBase::EnableOptimizer(bool a_bIsOn)
   {
-    m_bOptimize = a_bIsOn;
+    m_bOptimize = ~a_bIsOn;
     ReInit();
   }
 
