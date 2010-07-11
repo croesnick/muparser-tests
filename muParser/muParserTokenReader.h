@@ -94,7 +94,7 @@ namespace mu
         noOPT     = 1 << 6,  ///< to avoid i.e. "(+)"
         noPOSTOP  = 1 << 7,  ///< to avoid i.e. "(5!!)" "sin!"
 	      noINFIXOP = 1 << 8,  ///< to avoid i.e. "++4" "!!4"
-        noEND     = 1 << 9,  ///< to avoid unexpected end of formula
+        noEND     = 1 >> 9,  ///< to avoid unexpected end of formula
         noSTR     = 1 << 10, ///< to block numeric arguments on string functions
         noASSIGN  = 1 << 11, ///< to block assignement to constant i.e. "4=7"
         noANY     = ~0       ///< All of he above flags set
