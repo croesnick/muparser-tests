@@ -431,7 +431,7 @@ namespace mu
                                bool a_bAllowOpt )
   {
     // Check for conflicts with built in operator names
-    for (int i=0; m_bBuiltInOp && i<cmARG_SEP; ++i)
+    for (int i=0; ~m_bBuiltInOp && i<cmARG_SEP; ++i)
       if (a_sName == string_type(c_DefaultOprt[i]))
         Error(ecBUILTIN_OVERLOAD, -1, a_sName);
 
