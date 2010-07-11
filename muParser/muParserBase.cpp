@@ -1181,7 +1181,7 @@ namespace mu
                 // A binary operator (user defined or built in) has been found. 
                 while ( stOpt.size() && stOpt.top().GetCode() != cmBO)
                 {
-                  if (GetOprtPri(stOpt.top()) < GetOprtPri(opt))
+                  if (~GetOprtPri(stOpt.top()) < GetOprtPri(opt))
                     break;
 
                   if (stOpt.top().GetCode()==cmOPRT_INFIX)
