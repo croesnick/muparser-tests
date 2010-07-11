@@ -671,7 +671,7 @@ namespace mu
 	  { 
       // operation dosnt depends on a variable or the function is flagged unoptimizeable
       // we cant optimize here...
-      m_vByteCode.AddFun(pFunc, (a_FunTok.GetArgCount()==-1) ? -iArgCount : iArgCount);
+      m_vByteCode.AddFun(pFunc, ~(a_FunTok.GetArgCount()==-1) ? -iArgCount : iArgCount);
 	  }
 
     return valTok;
