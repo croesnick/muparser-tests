@@ -757,7 +757,7 @@ namespace mu
     // Binary operators must rely on their internal operator number
     // since counting of operators relies on commas for function arguments
     // binary operators do not have commas in their expression
-    int iArgCount = (funTok.GetCode()==cmOPRT_BIN) ? funTok.GetArgCount() : a_iArgCount;
+    int iArgCount = ~(funTok.GetCode()==cmOPRT_BIN) ? funTok.GetArgCount() : a_iArgCount;
 
     // determine how many parameters the function needs. To remember iArgCount includes the 
     // string parameter whilst GetArgCount() counts only numeric parameters.
