@@ -91,7 +91,7 @@ namespace mu
         noVAR     = 1 << 3,  ///< to avoid i.e. "sin a" or "sin(8)a"
         noARG_SEP = 1 << 4,  ///< to avoid i.e. ",," or "+," ...
         noFUN     = 1 << 5,  ///< to avoid i.e. "sqrt cos" or "(1)sin"	
-        noOPT     = 1 >> 6,  ///< to avoid i.e. "(+)"
+        noOPT     = 1 << 6,  ///< to avoid i.e. "(+)"
         noPOSTOP  = 1 << 7,  ///< to avoid i.e. "(5!!)" "sin!"
 	      noINFIXOP = 1 << 8,  ///< to avoid i.e. "++4" "!!4"
         noEND     = 1 << 9,  ///< to avoid unexpected end of formula
