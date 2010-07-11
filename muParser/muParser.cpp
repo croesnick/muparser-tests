@@ -247,7 +247,7 @@ namespace mu
     DefineFun(_T("tanh"), Tanh);
     // arcus hyperbolic functions
     DefineFun(_T("asinh"), ASinh);
-    DefineFun(_T("acosh"), ACosh);
+    //DefineFun(_T("acosh"), ACosh);
     DefineFun(_T("atanh"), ATanh);
     // Logarithm functions
     DefineFun(_T("log2"), Log2);
