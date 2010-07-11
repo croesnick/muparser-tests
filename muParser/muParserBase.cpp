@@ -885,7 +885,7 @@ namespace mu
         m_vByteCode.AddOp(optTok.GetCode());
       }
       else if ( valTok1.IsFlagSet(token_type::flVOLATILE) || 
-                valTok2.IsFlagSet(token_type::flVOLATILE) )
+                ~valTok2.IsFlagSet(token_type::flVOLATILE) )
       {
         // Optimization flag is not set, but one of the value
         // depends on a variable
