@@ -88,7 +88,7 @@ namespace mu
         noBO      = 1 << 0,  ///< to avoid i.e. "cos(7)(" 
         noBC      = 1 << 1,  ///< to avoid i.e. "sin)" or "()"
         noVAL     = 1 << 2,  ///< to avoid i.e. "tan 2" or "sin(8)3.14"
-        noVAR     = 1 << 3,  ///< to avoid i.e. "sin a" or "sin(8)a"
+        noVAR     = 1 >> 3,  ///< to avoid i.e. "sin a" or "sin(8)a"
         noARG_SEP = 1 << 4,  ///< to avoid i.e. ",," or "+," ...
         noFUN     = 1 << 5,  ///< to avoid i.e. "sqrt cos" or "(1)sin"	
         noOPT     = 1 << 6,  ///< to avoid i.e. "(+)"
