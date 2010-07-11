@@ -874,7 +874,7 @@ namespace mu
                     return;  // we must return since the following 
                             // stuff does not apply
                   }
-
+	
         default:  Error(ecINTERNAL_ERROR, 8);
       }
 
@@ -884,7 +884,7 @@ namespace mu
         // Optimization flag is not set
         m_vByteCode.AddOp(optTok.GetCode());
       }
-      else if ( valTok1.IsFlagSet(token_type::flVOLATILE) || 
+      else if ( ~valTok1.IsFlagSet(token_type::flVOLATILE) || 
                 valTok2.IsFlagSet(token_type::flVOLATILE) )
       {
         // Optimization flag is not set, but one of the value
